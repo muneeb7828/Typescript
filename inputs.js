@@ -41,7 +41,7 @@ var persondata2 = { age: 30 };
 var persondataA = { name: "muneeb" };
 var persondataB = { age: 30 };
 var persondataC = { name: "", age: 12 };
-var div = document.querySelector('.div'); // ye esclamation mark isliye lagaya he taki isme kabhi bhi value null nahi aaye aur jab bhi isko use kare to ? nahi nahi lagana pade
+var div = document.querySelector('.div'); // ye esclamation mark isliye lagaya he taki isme kabhi bhi value null nahi aaye aur jab bhi isko use kare to ?  nahi lagana pade
 console.log(div.innerHTML);
 // class in ts
 class Product {
@@ -69,3 +69,77 @@ class Product {
 }
 var product1 = new Product('sumsung', 100000, 101);
 console.log(product1);
+// extends class
+class Order extends Product {
+    constructor() {
+        super("iphone", 40000, 100);
+    }
+    getprice() {
+        return this.price;
+    }
+}
+var order = new Order();
+console.log(order.getprice());
+// modules
+var obj2 = {
+    name: "muneeb",
+    age: 24,
+    isgraduate: true,
+    address: "idgah hill bhopal"
+};
+var obj3 = {
+    name: "hamza",
+    age: 20,
+    isgraduate: false,
+    address: "shajanabad bhopal"
+};
+console.log(typeof obj2);
+console.log(typeof obj2);
+console.log(typeof obj2);
+// getter and setter
+class Employee {
+    employeename_;
+    employeeage_;
+    employeesalary_;
+    constructor(name, age, salary) {
+        this.employeename_ = name;
+        this.employeeage_ = age;
+        this.employeesalary_ = salary;
+    }
+    get employeename() {
+        return "MR. " + this.employeename_;
+    }
+    set employeename(value) {
+        this.employeename_ = "emp " + value;
+    }
+}
+var employee1 = new Employee("muneeb", 24, 40000);
+var employee2 = new Employee("hamza", 20, 41000);
+console.log(employee1.employeename);
+employee1.employeename = "muneeb ur rehman";
+console.log(employee1.employeename);
+class Department {
+    Deparmentname;
+    DeparmentId;
+    DeparmentZone;
+    constructor(name, deptId, DeptZone) {
+        this.Deparmentname = name;
+        this.DeparmentId = deptId;
+        this.DeparmentZone = DeptZone;
+    }
+    Departmentdetails() {
+        console.log(`This is details of ${this.Deparmentname} departmentId = ${this.DeparmentId} departmentZone = ${this.DeparmentZone} `);
+        return `This is details of ${this.Deparmentname} departmentId = ${this.DeparmentId} departmentZone = ${this.DeparmentZone} `;
+    }
+}
+var deparment1 = new Department("HR", 100, "bhopal");
+var deparment2 = new Department("Marketing", 101, "indore");
+var deparment3 = new Department("IT", 102, "mumbai");
+deparment1.Departmentdetails();
+console.log(deparment1.Departmentdetails());
+// static keyword
+class Company {
+    static name = "Google";
+}
+var c1 = new Company();
+console.log(Company.name);

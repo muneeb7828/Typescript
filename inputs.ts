@@ -1,3 +1,6 @@
+
+
+
 function getinfo(){
 const usernameInput=document.getElementById("username") as HTMLInputElement
 const username:string=usernameInput.value
@@ -80,7 +83,7 @@ var persondataB:personB={age:30}
 var persondataC:personc={name:"",age:12}
 
 
-var div=document.querySelector('.div') !   // ye esclamation mark isliye lagaya he taki isme kabhi bhi value null nahi aaye aur jab bhi isko use kare to ? nahi nahi lagana pade
+var div=document.querySelector('.div') !   // ye esclamation mark isliye lagaya he taki isme kabhi bhi value null nahi aaye aur jab bhi isko use kare to ?  nahi lagana pade
 
 console.log(div.innerHTML);
 
@@ -118,6 +121,133 @@ private name:string
 var product1=new Product('sumsung',100000,101)
 
 console.log(product1)
+
+// extends class
+
+class Order extends Product{
+
+constructor(){
+ super("iphone",40000,100) 
+}
+
+getprice(){
+ return this.price 
+}
+
+}
+
+var order=new Order()
+console.log(order.getprice())
+
+// modules
+
+var obj2={
+name:"muneeb",
+age:24,
+isgraduate:true,
+address:"idgah hill bhopal" 
+}
+
+
+var obj3={
+name:"hamza",
+age:20,
+isgraduate:false,
+address:"shajanabad bhopal" 
+}
+
+
+console.log(typeof obj2)
+console.log(typeof obj2)
+console.log(typeof obj2)
+
+
+// getter and setter
+
+class Employee{
+       employeename_:string
+        employeeage_:number
+        employeesalary_:number
+  constructor(name:string,age:number,salary:number){
+        this.employeename_=name
+        this.employeeage_=age
+        this.employeesalary_=salary
+  }  
+
+  get employeename(){
+    return "MR. "+this.employeename_
+  }
+
+  set employeename(value:string){
+     this.employeename_="emp "+value
+  }
+
+
+}
+
+var employee1=new Employee("muneeb",24,40000)
+var employee2=new Employee("hamza",20,41000)
+
+console.log(employee1.employeename)
+
+employee1.employeename="muneeb ur rehman"
+
+console.log(employee1.employeename)
+
+
+// interface in class
+// aur class me isko use karne ke implements keyword ka use karte he
+
+
+interface DepartmentDatatype{
+      Deparmentname:string
+      DeparmentId:number
+      DeparmentZone:string  
+      Departmentdetails():void
+}
+
+
+class Department implements DepartmentDatatype{
+       Deparmentname
+        DeparmentId
+        DeparmentZone
+  constructor(name:string,deptId:number,DeptZone:string){
+        this.Deparmentname=name
+        this.DeparmentId=deptId
+        this.DeparmentZone=DeptZone
+  }  
+  Departmentdetails(){
+    console.log(`This is details of ${this.Deparmentname} departmentId = ${this.DeparmentId} departmentZone = ${this.DeparmentZone} `);
+    return `This is details of ${this.Deparmentname} departmentId = ${this.DeparmentId} departmentZone = ${this.DeparmentZone} `
+  }
+
+}
+
+var deparment1= new Department("HR",100,"bhopal")
+var deparment2= new Department("Marketing",101,"indore")
+var deparment3= new Department("IT",102,"mumbai")
+
+
+deparment1.Departmentdetails()
+console.log(deparment1.Departmentdetails())
+
+
+// static keyword
+
+class Company{
+ static name:string="Google"
+}
+
+var c1 =new Company()
+
+console.log(Company.name);
+
+
+
+
+
+
+
 
 
 
