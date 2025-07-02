@@ -138,3 +138,18 @@ type RandomType = string | number | undefined | null | string[];
 declare var randomData: NonNullable<RandomType>;
 type siteRole = "Admin" | "user" | 'guest';
 declare var RollName: Record<siteRole, string>;
+declare namespace UserNamespace {
+    class Auth {
+        login(): void;
+    }
+    function getList(): void;
+}
+declare var user3: UserNamespace.Auth;
+declare function classlogger(constructor: Function): void;
+declare function getkeydetails(target: any, key: any): void;
+declare class CustomMaths {
+    value1: number;
+    value2: number;
+    constructor(x: number, y: number);
+}
+declare var cm1: CustomMaths;

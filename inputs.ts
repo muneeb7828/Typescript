@@ -415,6 +415,75 @@ var RollName:Record<siteRole,string>={
 }
 
 
+// namespace
+// iska use code ki logical grouping ke liye karte he
+// matlab agar same name se function ya class he to use karte he taki call kare to koi issue nahi aay
+// aur isko export karte he
+// air isko dusri file me bhi use kar sakte he
+
+namespace UserNamespace{
+
+export class Auth{
+ login(){
+  console.log('user login funtion')
+ } 
+}
+
+
+export function getList(){
+  console.log('list of users')
+}
+
+}
+
+var user3=new UserNamespace.Auth()
+user3.login()
+UserNamespace.getList()
+
+
+// decorators
+// isme bhi decorators python ki tarah hote he isme bhi jab class ya function banate he to uske uper decorator laga dete he jisse us class ya function ka control us decorator ke paas ajata he
+// aur jis bhi class ya function ke uper lagate he uska name dekh sakte he
+
+
+function classlogger(constructor:Function){       // ye constructor class ke liye hota he
+console.log(constructor.name)
+
+}
+
+function getkeydetails(target:any,key:any){       // ye key class ki property ke liye hota he
+console.log(key)
+
+}
+
+
+@classlogger
+class CustomMaths{
+
+  @getkeydetails
+  value1:number
+  value2:number
+  constructor(x:number,y:number){
+    this.value1=x
+    this.value2=y
+}
+
+}
+
+var cm1=new CustomMaths(10,20)
+
+
+// use decorator to overwrite functions
+
+
+
+
+
+
+
+
+
+
 
 
 
